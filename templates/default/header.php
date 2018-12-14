@@ -5,14 +5,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="We cater to our clients with 27 years of experience under our belt. From the moment you request a ride to the moment you reach your destination with your safety and comfort in mind.">
-        <meta name="keywords" content="Kangaroo, Cabs, taxi, Sri Lanka, driver, hybrid, safety and comfort, Booking, Airport, Pickup, Cabs, Taxi Rates, 2588588, reliable, cost, effective, comfortable, Toyota Prius Hybrid, Toyota Prius V (wagon), Toyota Axio Hybrid, Honda">
-        <meta name="apple-itunes-app" content="app-id=480762729"/>
-        <meta name="google-play-app" content="app-id=kangaroo.lk.clientapp">
-        <meta name="author" content="Kangaroo Cabs">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="apple-itunes-app" content=""/>
+        <meta name="google-play-app" content="">
+        <meta name="author" content="Nipuna Dodantenna">
         <meta name="theme-color" content="#FDB940" />
 
-        <title>Kangaroo Cabs</title>
+        <title><?php echo SITE_NAME; ?></title>
+
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Overpass:100,200" rel="stylesheet">
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/pe-icon-7-stroke.css" rel="stylesheet">
