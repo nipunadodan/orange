@@ -13,7 +13,10 @@
         <meta name="theme-color" content="#FDB940" />
 
         <title><?php echo SITE_NAME; ?></title>
+<<<<<<< HEAD
+=======
 
+>>>>>>> bb56d3662fa921cb9a3aacdf53752aa4a75aeebb
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Overpass:100,200" rel="stylesheet">
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/pe-icon-7-stroke.css" rel="stylesheet">
