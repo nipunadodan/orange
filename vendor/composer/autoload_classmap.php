@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Form\\Form' => $baseDir . '/includes/classes/Form/Form.php',
+    'Model\\Model' => $baseDir . '/includes/classes/Model.php',
+    'User\\User' => $baseDir . '/includes/classes/User/User.php',
 );
