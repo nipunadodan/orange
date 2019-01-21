@@ -11,19 +11,20 @@ namespace Form;
 
 class Form{
     static public $fillable = [
-        "name" => "user-add",
+        "form" => ["name" =>"user-add", "method" => "post", "class" => "o1 vf-form"],
         "items"=>[
-            ["first_name", "text", "First name", ""],
-            ["last_name", "text", "Last name", ""],
-            ["username", "text", "User name", ""],
+            ["text", "first_name", "First name", ""],
+            ["text", "last_name", "Last name", ""],
+            ["text", "username", "User name", ""],
             ["password", "password", "Password", ""],
-            ["level", "select", "Level", [
-                    ["10", "Super Administrator"],
-                    ["5", "Administrator"],
-                    ["1", "user"]
-                ]
+            ["select", "level", "Level", [
+                ["10", "Super Administrator"],
+                ["5", "Administrator"],
+                ["1", "user"]
+            ]
             ],
-            ["bio", "textarea", "Biography", ""]
+            ["textarea", "bio", "Biography", ""],
+            ["submit", "form-submit", "Send"]
         ]
     ];
 
@@ -32,9 +33,9 @@ class Form{
     }
 
     public static function formGen($fillable){
-        echo '<form class="o1 roo-form" name="'.$fillable['name'].'">';
+        echo '<form class="'.$fillable['form']['class'].'" name="'.$fillable['form']['name'].'" method="'.$fillable['form']['method'].'">';
         foreach($fillable['items'] as $item){
-            if($item[1] == 'select'){
+            if($item[0] == 'select'){
                 echo '<div class="input-group">';
                 echo '<label for="'.$item[0].'">'.$item[2].'</label>';
                 echo '<select name="' . $item[0] . '" id="' . $item[0] . '">';
@@ -43,14 +44,14 @@ class Form{
                 }
                 echo '</select>';
                 echo '</div>';
-            }elseif($item[1] == 'textarea'){
+            }elseif($item[0] == 'textarea'){
                 echo '<div class="input-group">';
                 echo '<label for="'.$item[0].'">'.$item[2].'</label>';
                 echo '<textarea name="' . $item[0] . '" placeholder="' . $item['2'].'" id="' . $item[0] . '" >'.$item[3].'</textarea>';
                 echo '</div>';
-            }elseif($item[1] == 'button'){
+            }elseif($item[0] == 'button'){
 
-            }elseif($item[1] == 'datalist'){
+            }elseif($item[0] == 'datalist'){
                 echo '<div class="input-group">';
                 echo '<label for="'.$item[0].'">'.$item[2].'</label>';
                 echo '<datalist name="' . $item[0] . '" id="' . $item[0] . '">';
@@ -59,9 +60,10 @@ class Form{
                 }
                 echo '</datalist>';
                 echo '</div>';
-            }elseif($item[1] == 'submit'){
+            }elseif($item[0] == 'submit'){
                 echo '<div class="input-group">';
-                echo '<input name="' . $item[0] . '" type="' . $item[1] . '" value="'.$item[3].'" id="' . $item[0] . '" />';
+                echo '<label></label>';
+                echo '<input name="' . $item[1] . '" type="' . $item[0] . '" value="'.$item[2].'" id="' . $item[1] . '" />';
                 echo '</div>';
             }else{
                 echo '<div class="input-group">';
