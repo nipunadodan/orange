@@ -1,5 +1,8 @@
 {
+    "name": "nipunadodan/orange",
+    "description": "A lightweight PHP framework",
     "require": {
+        "php": "^7.2",
         "catfan/medoo": "^1.6"
     },
     "autoload": {
