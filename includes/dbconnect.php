@@ -13,5 +13,15 @@ class Db {
         }
         return self::$instance;
     }
+
+    public static function execute($sql, $parameters){
+        try {
+            $db = Db::getInstance();
+            $stmt = $db->prepare($sql);
+            $stmt->execute($parameters);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage() . "<br />\n";
+        }
+    }
 }
 ?>
