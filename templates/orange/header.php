@@ -18,7 +18,6 @@
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/pe-icon-7-stroke.css" rel="stylesheet">
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/helper.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo TEMPLATE_URL; ?>css/jquery-ui.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/intlTelInput.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/datetimepicker.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/styles.css" rel="stylesheet">

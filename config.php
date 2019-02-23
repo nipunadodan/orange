@@ -1,10 +1,9 @@
 <?php
 define("SITE_NAME",'Orange V2');
-define("TEMPLATE", 'default');
 
 //	Global settings
 define("DOMAIN", "http://localhost/");
-define("SITE_ROOT", "orangev2/");
+define("SITE_ROOT", "nipunadodan/orange/");
 
 define("SITE_URL", DOMAIN.SITE_ROOT);
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
@@ -16,21 +15,22 @@ define("FUNCTIONS", INC_PATH."functions.php");
 
 define("MODULE_PATH", DOC_ROOT."modules/");
 
-define("PAGE_PATH", DOC_ROOT."pages/");
-//define("PAGE_URL", SITE_URL."pages/");
+define("PAGE_PATH", DOC_ROOT."views/");
+//define("PAGE_URL", SITE_URL."views/");
 define("PAGE_URL", SITE_URL."?page=");
 
 define("RESOURCES_PATH", DOC_ROOT."resources/");
 define("RESOURCES_URL", SITE_URL."resources/");
 
+define("TEMPLATE", 'orange');
 define("TEMPLATE_PATH", DOC_ROOT."templates/".TEMPLATE."/");
 define("TEMPLATE_URL", SITE_URL."templates/".TEMPLATE."/");
 
 define("DB_HOST", "localhost");
-define("DB_NAME", "orangev2");
-define("DB_USER", "user");
-define("DB_PASSWORD", "password");
-define("DB_PREFIX", "pre_");
+define("DB_NAME", "orange");
+define("DB_USER", "nipuna");
+define("DB_PASSWORD", "nipuna123");
+define("DB_PREFIX", "o_");
 
 define("SECURE", false);
 define("PRODUCTION", false);

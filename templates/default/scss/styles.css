@@ -41,6 +41,9 @@ nav ul {
     margin: 20px 0; }
 
 /* Layout */
+#content {
+  display: flex; }
+
 /* sections */
 .home-panel-1 {
           /*
@@ -236,23 +239,24 @@ section.inner-page {
   color: #ffffff;
   padding: 8px;
   font-size: 0.8rem; }
-
-.footer-icon {
-  font-size: 0.9rem;
-  border-radius: 50%;
-  background: #cfcfcf;
-  padding: 8px;
-  width: 30px;
-  height: 30px;
-  text-align: center; }
-  .footer-icon.fa-facebook-f {
-    background: #3B569D; }
-  .footer-icon.fa-twitter {
-    background: #5DA9DD; }
-  .footer-icon.fa-linkedin-in {
-    background: #006394; }
-  .footer-icon.fa-instagram {
-    background: #D42D83; }
+  .footer a {
+    color: #ffffff; }
+  .footer .footer-icon {
+    font-size: 0.9rem;
+    border-radius: 50%;
+    background: #cfcfcf;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    text-align: center; }
+    .footer .footer-icon.fa-facebook-f {
+      background: #3B569D; }
+    .footer .footer-icon.fa-twitter {
+      background: #5DA9DD; }
+    .footer .footer-icon.fa-linkedin-in {
+      background: #006394; }
+    .footer .footer-icon.fa-instagram {
+      background: #D42D83; }
 
 /* Utilities */
 .datetimepicker.dropdown-menu {

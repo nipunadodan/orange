@@ -1,99 +1,181 @@
 $(document).ready(function(){
     var winHeight = $(window).height();
-    var navHeight = $('div.navbar_main').outerHeight();
+    var navHeight = $('nav.navbar').outerHeight();
     var footerHeight = $('.footer').outerHeight();
 
     var sectionHeight = winHeight-navHeight-footerHeight;
 
-    console.log(winHeight+' '+navHeight+' '+footerHeight);
 
-    $('#content, nav, #height-const').css('min-height',sectionHeight+'px');
-    $('#menu-img').css('max-height', sectionHeight+'px');
-
-    winHeight  = 0;
-    footerHeight = 0;
-    $(window).resize(function() {
-        winHeight = $(window).height();
-        footerHeight = $('.footer').outerHeight();
-    	sectionHeight = winHeight-navHeight-footerHeight;
-        console.log(winHeight+' '+navHeight+' '+footerHeight);
-        $('#content, nav, #height-const').css('min-height',sectionHeight+'px');
-
-        $('#menu-img').css('max-height', sectionHeight+'px');
-
-        //return sectionHeight;
+    $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
     });
 
 
-    //$('#main_nav').hide();
-    $('#menu_icon').css('cursor', 'pointer');
+    /* Datetime picker initialisation */
+    function datetimeinit(){
+        var d = new Date();
+        var strDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
 
-    /*$('#menu_icon').click(function(){
-        $('#content').toggle();
-        //$('#main_nav').toggle();
-        $('#main_nav').toggleClass('hidden');
-        $('#menu_icon').toggleClass('pe-7s-menu pe-7s-close');
-    });*/
+        $(".datetime, #datetimepicker").datetimepicker({
+            format: "yyyy-mm-dd hh:ii:00.000",
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left",
+            startDate: strDate
+        });
+    }
 
-    $('#main_nav').hide();
+    /* Telephone number formatter initialisation */
+    function telephone() {
+        $("#telephone").intlTelInput({
+            // options here
+            preferredCountries: ["lk", "us", "gb"],
+            separateDialCode: true,
+            formatOnDisplay: true,
+            autoFormat: true,
+            nationalMode: false,
+            utilsScript: "template/js/telutils.js"
+        });
 
-    var i=0;
-    $( "#menu_icon" ).click(function() {
-        if(i%2==0) {
-            $("#content").hide("slide",{direction:"left"}, 100, function () {
-                $("#main_nav").toggle("slide", {direction: "right"},100);
-                $('body').css('overflow','hidden');
+        $("#telephone").keyup(function () {
+            if ($(this).intlTelInput("isValidNumber")) {
+                $(this).css('border-color', 'green');
+                $("#phone").removeClass("wrong_no");
+                var code = $(this).intlTelInput("getSelectedCountryData").dialCode;
+
+                $('input#countrycode').val(code);
+            } else {
+                $(this).css('border-color', 'red');
+                $("#phone").addClass("wrong_no");
+            }
+        });
+    }
+
+    function moreinfo(){
+        $('#signup-info').hide();
+        /* airport info button */
+        $('#signup-info-button, #signup-info-close').on('click', function () {
+            $('form.signup-form').toggle();
+            $('div#signup-info').toggle();
+            $('#signup-info-button').toggleClass('text-muted text-warning');
+            console.log('die');
+        });
+    }
+
+    /* copy to clipboard */
+    function copyTextToClipboard(text) {
+        var textArea = document.createElement( "textarea" );
+        textArea.value = text;
+        document.body.appendChild( textArea );
+
+        textArea.select();
+
+        try {
+            var successful = document.execCommand( 'copy' );
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copying text command was ' + msg);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
+
+        document.body.removeChild( textArea );
+    }
+
+    function copyText(){
+        $('body').on('click', 'i.fa-copy', function (e) {
+            e.preventDefault();
+            var clipboardText = "";
+            clipboardText = $( 'span#refid' ).text();
+
+            copyTextToClipboard( clipboardText );
+        });
+    }
+
+    /* paste from clipboard */
+    function pasteTextFromClipboard(elem){
+        var pasteText = document.querySelector(elem);
+        pasteText.focus();
+        navigator.clipboard.readText()
+            .then(text => {
+                $('#pasteID').val(text);
+            })
+            .catch(err => {
+                console.error('Failed to read clipboard contents: ', err);
             });
-        }else{
-            $('body').css('overflow','hidden');
-            $("#main_nav").toggle("slide",{direction:"right"}, 100, function () {
-                $("#content").show("slide", {direction:"left"},100);
+        //console.log('Pasted');
+    }
+
+    $('form').on('click', 'i.fa-paste', function (e) {
+        e.preventDefault();
+        pasteTextFromClipboard('#pasteID'); // paste the content to some element
+    });
+
+    /*
+     * Replace all SVG images with inline SVG
+     */
+    function imgtosvg(){
+        jQuery('img.svg').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+                if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                    $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+                }
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+        });
+    }
+
+    /*----------------------------------------------------------------------------------------------*/
+
+    // Add smooth scrolling on all links inside the navbar
+    $("#home-page-menu a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            console.log(hash);
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                //window.location.hash = hash;
             });
         }
-        $('body').css('overflow','auto');
-        $('#menu_icon').toggleClass('pe-7s-menu pe-7s-close');
-        i++;
     });
 
+    /* ================================================================== */
 
+    /* main init */
+    function bigInit(){
+        imgtosvg();
+        datetimeinit();
+        telephone();
+        copyTextToClipboard();
+        copyText();
+        moreinfo();
+    }
 
-    $('#nb-same').on('click touchend', function (e) {
-        var name = $('#name').val();
-        if($('#nb-same').is(':checked')){
-            $('#nb-name').val(name);
-        }else{
-        	$('#nb-name').val('');
-		}
-    });
-	$('#name').on('keyup touchend', function (e){
-        var name = $('#name').val();
-        if($('#nb-same').is(':checked')){
-            $('#nb-name').val(name);
-        }
-	});
+    bigInit();
 
-    $("#telephone").intlTelInput({
-        // options here
-        preferredCountries: [ "us", "gb","lk" ],
-        separateDialCode: false,
-        formatOnDisplay: true,
-        autoFormat: true,
-        nationalMode: false,
-        utilsScript: "templates/default/js/telutils.js"
-    });
-
-    $("#telephone").keyup(function(){
-        if($(this).intlTelInput("isValidNumber")){
-            $(this).css('border-color', 'green');
-            $("#phone").removeClass("wrong_no");
-        }
-        else{
-            $(this).css('border-color', 'red');
-            $("#phone").addClass("wrong_no");
-        }
-    });
-
-    $('#datetimepicker').datetimepicker({
-        'autoclose': true
-    });
-});
+}); //final close
