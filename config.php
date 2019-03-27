@@ -3,7 +3,7 @@ define("SITE_NAME",'Orange V2');
 
 //	Global settings
 define("DOMAIN", "http://localhost/");
-define("SITE_ROOT", "nipunadodan/orange/");
+define("SITE_ROOT", "nsd/orange/");
 
 define("SITE_URL", DOMAIN.SITE_ROOT);
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
