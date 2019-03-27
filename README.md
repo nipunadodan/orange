@@ -9,6 +9,11 @@ Model class is the base class and is extended from the Medoo external package im
 
 **IMPORTANT:** If you want a model to inject data into a view, just use the model at the view since there no routing available to inject it automatically. But hey, it's the same thing without having the hassle to maintain a separate routes file and also it gives the liberty to have multiple models at once in a given view to work with.
 
+### Database
+You can handle the database either by using Medoo methods or directly using PDO.
+
+**NOTE:** In future Medoo will use the same PDO object created by includes/dbconnect.php
+
 ## Models
 Always should return a json response which includes compulsorily,
 - status [ success | danger | warning | info ]
