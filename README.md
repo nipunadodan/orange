@@ -40,3 +40,6 @@ Files that compulsorily should contain in each template,
 - header.php
 - footer.php
 - container.php
+
+## AJAX
+On the root folder ajax.php will route the ajax requests comes via includes/js/ajax.js. URL must be specified as site_url+'?process=[process_name as spcified in the form name]'+'-process'
