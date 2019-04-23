@@ -34,7 +34,7 @@ $(document).ready(function(){
             formatOnDisplay: true,
             autoFormat: true,
             nationalMode: false,
-            utilsScript: "template/js/telutils.js"
+            utilsScript: "templates/orange/js/telutils.js"
         });
 
         $("#telephone").keyup(function () {
@@ -149,6 +149,29 @@ $(document).ready(function(){
     }
 
     /*----------------------------------------------------------------------------------------------*/
+
+    var mySwiper = new Swiper ('.slider1', {
+        // Optional parameters
+        slidesPerView: '1',
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        /*pagination: {
+            el: '.vtype-pagination',
+            clickable: true,
+        },*/
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-custom-next',
+            prevEl: '.swiper-custom-prev',
+        },
+
+        slidesPerView :'auto',
+        centeredSlides: true,
+    });
+
 
     // Add smooth scrolling on all links inside the navbar
     $("#home-page-menu a").on('click', function(event) {

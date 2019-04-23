@@ -1,76 +1,82 @@
-<section class="home-section" id="home-banner">
+<section class="home-section bg-dark text-white" id="home-banner">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8 mb-5">
-                <h1 class="home-title"><span class="SF-thin">Welcome to </span><br /><span class="text-yellow">Orange</span> framework</h1>
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-6">
+                <h1 class="home-title"><span class="SF-thin">Welcome to </span><br /><span class="text-yellow text-bold">Orange</span> framework</h1>
                 <h5>Lightweight PHP framework</h5>
 
             </div>
-            <div class="col-md-4 px-4 py-5 mt-4 mt-md-0" id="quick-book-panel">
-                <div id="sign-up-form">
-                    <h3 class="text-center">Sign-Up</h3>
-
-                    <form name="sign-up" class="orange-form api" action="" method="post" data-reset="yes">
-
-                        <div class="row text-center">
-                            <div class="col">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ultrices pulvinar. In fermentum massa eu mollis viverra. Nam sed eleifend nunc, sit amet mattis justo. Sed nisl risus, commodo nec diam et, posuere vulputate tortor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row uniid">
-                            <div class="col-12">
-                                <label for="uniid">Text Input</label>
-                            </div>
-                        </div>
-                        <div class="input-group nid">
-                            <input class="autocomplete form-control border-right-0" id="origin" type="text" name="nid" placeholder="National ID" required>
-
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-id-card text-success"></i></span>
-                            </div>
-                        </div>
-
-
-                        <div class="row ">
-                            <div class="col-12">
-                                <label for="eta">Date-Time Input</label>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" name="eventTime" id="eta" class="form-control border-right-0 datetime" placeholder="YYYY-MM-DD HH:mm:ss.sss" autocomplete="off" required />
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-clock text-info"></i></span>
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-12">
-                                <label for="telephone">Telephone Number</label>
-                                <input type="tel" placeholder="" id="telephone" name="contactNumber" required>
-                                <input type="hidden" value="" id="countrycode" name="countryCode">
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-6 offset-6">
-                                <input type="submit" value="SIGN UP">
-                            </div>
-                        </div>
-                        <div class="text-center" id="signup-info-button"><i class="fas fa-info-circle text-muted"></i> Already have an account?</div>
-                    </form>
-                    <div class="message"></div>
-
-                    <div class="text-small" id="signup-info">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ultrices pulvinar. In fermentum massa eu mollis viverra. Nam sed eleifend nunc, sit amet mattis justo. Sed nisl risus, commodo nec diam et, posuere vulputate tortor. Ut vitae neque id erat vulputate gravida. Vestibulum ante velit, malesuada at sem a, rutrum aliquet mi. Proin tincidunt sem ac tempus porttitor. <span class="text-bold">Phasellus molestie,</span> eros <span class="text-bold">quis placerat eleifend</span>.</p>
-
-                        <p>Integer tempor, diam quis luctus facilisis.</p>
-
-                        <button class="btn btn-outline-secondary text-small mt-4" id="signup-info-close" style="width: 100%;">GOTCHA!</button>
-                    </div>
-                </div> <!-- .home-booking-forms ENDs here -->
-            </div>  <!-- #quick-book-panel ENDs here -->
         </div> <!-- .row ENDs here -->
     </div> <!-- .container ENDs here -->
+</section>
+
+<section id="signup" class="pb-md-5 home-section">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 id="quick-book-panel">
+            <div id="sign-up-form">
+                <h3 class="text-center">Sign-Up</h3>
+
+                <form name="sign-up" class="orange-form api" action="" method="post" data-reset="yes">
+
+                    <div class="row text-center">
+                        <div class="col">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ultrices pulvinar. In fermentum massa eu mollis viverra. Nam sed eleifend nunc, sit amet mattis justo. Sed nisl risus, commodo nec diam et, posuere vulputate tortor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row uniid">
+                        <div class="col-12">
+                            <label for="uniid">Text Input</label>
+                        </div>
+                    </div>
+                    <div class="input-group nid">
+                        <input class="autocomplete form-control border-right-0" id="origin" type="text" name="nid" placeholder="National ID" required>
+
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-comment-alt text-success"></i></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row ">
+                        <div class="col-12">
+                            <label for="eta">Date-Time Input</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="eventTime" id="eta" class="form-control border-right-0 datetime" placeholder="YYYY-MM-DD HH:mm:ss.sss" autocomplete="off" required />
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-clock text-info"></i></span>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <label for="telephone">Telephone Number</label>
+                            <input type="tel" placeholder="" id="telephone" name="contactNumber" required>
+                            <input type="hidden" value="" id="countrycode" name="countryCode">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-6 offset-6">
+                            <input type="submit" value="SIGN UP">
+                        </div>
+                    </div>
+                    <div class="text-right" id="signup-info-button"><i class="fas fa-info-circle text-muted"></i> Already have an account?</div>
+                </form>
+                <div class="message"></div>
+
+                <div class="text-small" id="signup-info">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ultrices pulvinar. In fermentum massa eu mollis viverra. Nam sed eleifend nunc, sit amet mattis justo. Sed nisl risus, commodo nec diam et, posuere vulputate tortor. Ut vitae neque id erat vulputate gravida. Vestibulum ante velit, malesuada at sem a, rutrum aliquet mi. Proin tincidunt sem ac tempus porttitor. <span class="text-bold">Phasellus molestie,</span> eros <span class="text-bold">quis placerat eleifend</span>.</p>
+
+                    <p>Integer tempor, diam quis luctus facilisis.</p>
+
+                    <button class="btn btn-outline-secondary text-small mt-4" id="signup-info-close" style="width: 100%;">LOG IN!</button>
+                </div>
+            </div> <!-- .sign-up-form ENDs here -->
+        </div>  <!-- #sign-up-panel ENDs here -->
+    </div>
 </section>
 
 <section id="framework" class="pb-md-5 home-section">
@@ -83,13 +89,13 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-1.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-1.jpg" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-2.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-2.jpg" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-3.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-3.jpg" />
                         </div>
                     </div>
                 </div>
@@ -111,7 +117,7 @@
                             <p class="h5">Integer tempor, diam quis luctus facilisis.</p>
                         </div>
                         <div class="swiper-slide">
-                            <h3 class="my-4 text-bold">3. Commit to the git</h3>
+                            <h3 class="my-4 text-bold">3. Commit to git</h3>
                             <p class="h5">Integer tempor, diam quis luctus facilisis.</p>
                         </div>
                     </div>
@@ -132,36 +138,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    var mySwiper = new Swiper ('.slider1', {
-        // Optional parameters
-        slidesPerView: '4',
-        direction: 'horizontal',
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.vtype-pagination',
-            clickable: true,
-            /*renderBullet: function (index, className) {
-                //return '<span class="' + className + '">' + (menu[index]) + '</span>';
-                return '<img id="thumb-van" class="d-block mx-auto img-fluid ' + className + '" src="'+site_url+'resources/images/vtypes/' + (menu[index]) + '.png" />'
-            },*/
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-custom-next',
-            prevEl: '.swiper-custom-prev',
-        },
-
-        slidesPerView :'auto',
-        centeredSlides: true,
-    });
-
-    /*mySwiper.on('slideChangeTransitionEnd', function () {
-
-    });
-*/
-</script>

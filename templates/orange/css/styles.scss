@@ -1,18 +1,19 @@
 $xlightgray : #F6F6F9;
 $light_gray: #a1a7b6;
 $gray: #535A6B;
-$yellow: #FE722B;
+$yellow: #f29a3c;
 $light_gray: #dfdfdf;
 $dark_gray: #cfcfcf;
 $body_color : #212529;
 
 body{
-    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
 h1,h2,h3,h4,h5,h6{
-    font-family: 'SFUIDisplay-Light', sans-serif;
-    font-weight: 100;
+    /*font-family: 'SFUIDisplay-Light', sans-serif;
+    font-weight: 100;*/
 }
 
 .text-normal{
@@ -24,7 +25,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .text-bold{
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-weight: 900;
 }
 
 .text-yellow{
@@ -33,16 +34,15 @@ h1,h2,h3,h4,h5,h6{
 
 /* SF Fonts */
 .SF-thin{
-    font-family: 'SFUIDisplay-Thin', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 h1.home-title{
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 h1.page-title{
-    font-family: 'SFUIDisplay-Bold', sans-serif;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 a{
