@@ -33,14 +33,7 @@ $inner = (isset($_GET['page']) && $_GET['page'] !== '') ? SITE_URL : '';
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <ul class="navbar-nav ml-auto" id="booking-forms-tabs">
-                <li class="nav-item" data-link="quick-booking-form">
-                    <a class="nav-link" href="<?php echo $inner?>#home-banner"><i class="far fa-clock mx-1"></i> Quick Booking</a>
-                </li>
-                <li class="nav-item" data-link="airport-booking-form">
-                    <a class="nav-link" href="<?php echo $inner?>#home-banner"><i class="fas fa-plane-departure mx-1"></i> Airport Transfers</a>
-                </li>
-            </ul>
+
         </div>
     </div>
 </nav>
