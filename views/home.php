@@ -28,7 +28,7 @@
                             <input class="autocomplete form-control border-right-0" id="origin" type="text" name="nid" placeholder="National ID" required>
 
                             <div class="input-group-append">
-                                <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-id-card text-success"></i></span>
+                                <span class="input-group-text bg-white border-left-0" style="border:1px solid #dfdfdf" id="basic-addon2"><i class="far fa-comment-alt text-success"></i></span>
                             </div>
                         </div>
 
@@ -83,13 +83,13 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-1.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-1.jpg" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-2.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-2.jpg" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-3.png" />
+                            <img class="img-fluid mx-auto d-block" src="<?php echo RESOURCES_URL?>images/framework-3.jpg" />
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                             <p class="h5">Integer tempor, diam quis luctus facilisis.</p>
                         </div>
                         <div class="swiper-slide">
-                            <h3 class="my-4 text-bold">3. Commit to the git</h3>
+                            <h3 class="my-4 text-bold">3. Commit to git</h3>
                             <p class="h5">Integer tempor, diam quis luctus facilisis.</p>
                         </div>
                     </div>
@@ -132,36 +132,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    var mySwiper = new Swiper ('.slider1', {
-        // Optional parameters
-        slidesPerView: '4',
-        direction: 'horizontal',
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.vtype-pagination',
-            clickable: true,
-            /*renderBullet: function (index, className) {
-                //return '<span class="' + className + '">' + (menu[index]) + '</span>';
-                return '<img id="thumb-van" class="d-block mx-auto img-fluid ' + className + '" src="'+site_url+'resources/images/vtypes/' + (menu[index]) + '.png" />'
-            },*/
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-custom-next',
-            prevEl: '.swiper-custom-prev',
-        },
-
-        slidesPerView :'auto',
-        centeredSlides: true,
-    });
-
-    /*mySwiper.on('slideChangeTransitionEnd', function () {
-
-    });
-*/
-</script>

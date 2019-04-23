@@ -13,15 +13,28 @@
         <meta name="theme-color" content="#FDB940" />
 
         <title><?php echo SITE_NAME; ?></title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Overpass:100,200" rel="stylesheet">
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/pe-icon-7-stroke.css" rel="stylesheet">
         <link href="<?php echo RESOURCES_URL; ?>fonts/7s/css/helper.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/intlTelInput.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/datetimepicker.min.css" rel="stylesheet">
+        <link href="<?php echo TEMPLATE_URL; ?>css/swiper.min.css" rel="stylesheet">
         <link href="<?php echo TEMPLATE_URL; ?>css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
+        <link href="<?php echo TEMPLATE_URL; ?>css/fontawesome.min.css" rel="stylesheet" />
+        <link href="<?php echo TEMPLATE_URL; ?>css/all.min.css" rel="stylesheet" />
+        <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Overpass:100,200" rel="stylesheet">-->
+
+
+        <script src="<?php echo INC_URL; ?>js/jquery-3.3.1.min.js"></script>
+        <script src="<?php echo TEMPLATE_URL; ?>js/bootstrap.bundle.min.js"></script>
+        <script>var site_url = "<?php echo SITE_URL; ?>"</script>
+        <script src="<?php echo INC_URL; ?>js/ajax.js"></script>
+        <script src="<?php echo TEMPLATE_URL; ?>js/intlTelInput-jquery.min.js"></script>
+        <script src="<?php echo TEMPLATE_URL; ?>js/datetimepicker.min.js"></script>
+        <script src="<?php echo TEMPLATE_URL; ?>js/swiper.min.js"></script>
+        <script src="<?php echo TEMPLATE_URL; ?>js/scripts.js"></script>
     </head>
     
     <body>
