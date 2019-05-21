@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c267c0e4fa931699ae76e85a2aa632ae",
+    "content-hash": "4b757c386048efba15169edf0551147a",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -67,16 +67,16 @@
         },
         {
             "name": "nipunadodan/orange-core",
-            "version": "dev-master",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/nipunadodan/orange-core.git",
-                "reference": "258c2c558d1af9a6a7995b76a573080dad65f79a"
+                "reference": "e30cf079fcd9e688cbe5acc3fa0bdf048014be48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/nipunadodan/orange-core/get/258c2c558d1af9a6a7995b76a573080dad65f79a.zip",
-                "reference": "258c2c558d1af9a6a7995b76a573080dad65f79a",
+                "url": "https://bitbucket.org/nipunadodan/orange-core/get/e30cf079fcd9e688cbe5acc3fa0bdf048014be48.zip",
+                "reference": "e30cf079fcd9e688cbe5acc3fa0bdf048014be48",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "lightweight",
                 "php"
             ],
-            "time": "2019-05-13T11:09:46+00:00"
+            "time": "2019-05-21T05:43:39+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

@@ -1,7 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kweb
- * Date: 14/05/19
- * Time: 13:22
- */
+if (isset($_GET['page']) && $_GET['page']) {
+    $page_path = PAGE_PATH . $_GET['page'] . '.php';
+    if (file_exists($page_path)) {
+        echo '<div id="content">';
+        include_once(PAGE_PATH.$_GET['page'] . '.php');
+        echo '</div>';
+    } else {
+        include_once(PAGE_PATH.'404.php');
+    }
+} else {
+    echo '<div id="content">';
+    include_once(PAGE_PATH . 'home.php');
+    echo '</div>';
+}

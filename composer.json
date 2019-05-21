@@ -3,7 +3,7 @@
     "description": "A lightweight PHP framework",
     "require": {
         "php": "^7.2",
-        "nipunadodan/orange-core": "dev-master"
+        "nipunadodan/orange-core": "dev-dev"
     },
     "autoload": {
         "classmap": [
