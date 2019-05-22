@@ -71,12 +71,12 @@
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/nipunadodan/orange-core.git",
-                "reference": "e30cf079fcd9e688cbe5acc3fa0bdf048014be48"
+                "reference": "55887ab9ca8787676be7ddcb9c052efe3925cdfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/nipunadodan/orange-core/get/e30cf079fcd9e688cbe5acc3fa0bdf048014be48.zip",
-                "reference": "e30cf079fcd9e688cbe5acc3fa0bdf048014be48",
+                "url": "https://bitbucket.org/nipunadodan/orange-core/get/55887ab9ca8787676be7ddcb9c052efe3925cdfa.zip",
+                "reference": "55887ab9ca8787676be7ddcb9c052efe3925cdfa",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "lightweight",
                 "php"
             ],
-            "time": "2019-05-21T05:43:39+00:00"
+            "time": "2019-05-21T06:04:06+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
