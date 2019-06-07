@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2374981565d6b1e9fcb26c11b2d1b63c
+class ComposerStaticInitea553513d7022b32e8476b81364992ea
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'M' => 
         array (
             'Medoo\\' => 6,
@@ -14,24 +18,26 @@ class ComposerStaticInit2374981565d6b1e9fcb26c11b2d1b63c
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
         ),
     );
 
-    public static $classMap = array (
-        'Form\\Form' => __DIR__ . '/../..' . '/models/Form/Form.php',
-        'Model\\Model' => __DIR__ . '/../..' . '/models/Model.php',
-        'User\\User' => __DIR__ . '/../..' . '/models/User/User.php',
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nipunadodan/orange-core/classes',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2374981565d6b1e9fcb26c11b2d1b63c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2374981565d6b1e9fcb26c11b2d1b63c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2374981565d6b1e9fcb26c11b2d1b63c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitea553513d7022b32e8476b81364992ea::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitea553513d7022b32e8476b81364992ea::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitea553513d7022b32e8476b81364992ea::$fallbackDirsPsr4;
 
         }, null, ClassLoader::class);
     }

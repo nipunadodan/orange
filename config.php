@@ -2,11 +2,12 @@
 define("SITE_NAME",'Orange V2');
 
 //	Global settings
-define("DOMAIN", "http://localhost/");
-define("SITE_ROOT", "nipunadodan/orange/");
 
 define("SITE_URL", DOMAIN.SITE_ROOT);
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
+
+define('CORE_PATH',DOC_ROOT.'vendor/nipunadodan/orange-core/');
+include_once CORE_PATH.'config.php';
 
 define("INC_PATH", DOC_ROOT."includes/");
 define("INC_URL", SITE_URL."includes/");
@@ -15,8 +16,8 @@ define("FUNCTIONS", INC_PATH."functions.php");
 
 define("MODULE_PATH", DOC_ROOT."modules/");
 
-define("PAGE_PATH", DOC_ROOT."views/");
-//define("PAGE_URL", SITE_URL."views/");
+define("PAGE_PATH", DOC_ROOT."pages/");
+//define("PAGE_URL", SITE_URL."pages/");
 define("PAGE_URL", SITE_URL."?page=");
 
 define("RESOURCES_PATH", DOC_ROOT."resources/");
@@ -26,16 +27,8 @@ define("TEMPLATE", 'orange');
 define("TEMPLATE_PATH", DOC_ROOT."templates/".TEMPLATE."/");
 define("TEMPLATE_URL", SITE_URL."templates/".TEMPLATE."/");
 
-define("DB_HOST", "localhost");
-define("DB_NAME", "orange");
-define("DB_USER", "nipuna");
-define("DB_PASSWORD", "nipuna123");
-define("DB_PREFIX", "o_");
-
 define("SECURE", false);
 define("PRODUCTION", false);
-
-date_default_timezone_set('Asia/Colombo'); //set your timezone here
 
 if(!PRODUCTION){
     ini_set('display_errors', 1);
@@ -43,18 +36,4 @@ if(!PRODUCTION){
     error_reporting(E_ALL);
 }
 
-require 'vendor/autoload.php';
-
-// Using Medoo namespace in addition to native PDO implementation
-use Medoo\Medoo;
-
-$database = new Medoo([
-    // required
-    'database_type' => 'mysql',
-    'database_name' => DB_NAME,
-    'server' => DB_HOST,
-    'username' => DB_USER,
-    'password' => DB_PASSWORD,
-    'prefix' => DB_PREFIX,
-]);
-?>
+include_once DOC_ROOT.'env.php';
