@@ -3,8 +3,9 @@ define("SITE_NAME",'Orange V2');
 
 //	Global settings
 
-define("SITE_URL", DOMAIN.SITE_ROOT);
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
+include_once DOC_ROOT.'env.php';
+define("SITE_URL", DOMAIN.SITE_ROOT);
 
 define('CORE_PATH',DOC_ROOT.'vendor/nipunadodan/orange-core/');
 include_once CORE_PATH.'config.php';
@@ -23,7 +24,7 @@ define("PAGE_URL", SITE_URL."?page=");
 define("RESOURCES_PATH", DOC_ROOT."resources/");
 define("RESOURCES_URL", SITE_URL."resources/");
 
-define("TEMPLATE", 'orange');
+define("TEMPLATE", 'default');
 define("TEMPLATE_PATH", DOC_ROOT."templates/".TEMPLATE."/");
 define("TEMPLATE_URL", SITE_URL."templates/".TEMPLATE."/");
 
@@ -36,4 +37,3 @@ if(!PRODUCTION){
     error_reporting(E_ALL);
 }
 
-include_once DOC_ROOT.'env.php';
