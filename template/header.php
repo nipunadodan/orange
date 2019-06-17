@@ -12,7 +12,9 @@
     <title></title>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="<?php echo O_INC_URL.'bootstrap.min.css'?>" rel="stylesheet" type="text/css">
-    <link href="http://nipunadodan.com/css/oresfra.css" rel="stylesheet" type="text/css">
-    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo CORE_INC_URL?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo TEMPLATE_URL ?>css/styles.css" rel="stylesheet" type="text/css">
+
+    <script src="<?php echo CORE_INC_URL?>js/jquery.min.js"></script>
+    <script src="<?php echo CORE_INC_URL?>js/bootstrap.bundle.min.js"></script>
 </head>

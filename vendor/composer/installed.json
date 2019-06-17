@@ -62,17 +62,17 @@
     },
     {
         "name": "nipunadodan/orange-core",
-        "version": "dev-dev",
-        "version_normalized": "dev-dev",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://bitbucket.org/nipunadodan/orange-core.git",
-            "reference": "55887ab9ca8787676be7ddcb9c052efe3925cdfa"
+            "url": "https://github.com/nipunadodan/orange-core.git",
+            "reference": "4d8c4e5058786e742c479962952abdf64e9037e4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://bitbucket.org/nipunadodan/orange-core/get/55887ab9ca8787676be7ddcb9c052efe3925cdfa.zip",
-            "reference": "55887ab9ca8787676be7ddcb9c052efe3925cdfa",
+            "url": "https://api.github.com/repos/nipunadodan/orange-core/zipball/4d8c4e5058786e742c479962952abdf64e9037e4",
+            "reference": "4d8c4e5058786e742c479962952abdf64e9037e4",
             "shasum": ""
         },
         "require": {
@@ -80,7 +80,7 @@
             "php": ">=5.6",
             "phpmailer/phpmailer": "^6.0"
         },
-        "time": "2019-05-21T06:04:06+00:00",
+        "time": "2019-06-05T05:56:35+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
