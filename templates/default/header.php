@@ -9,7 +9,7 @@
     <meta name="keywords" content="web, ui, ux, developer, php, HTML, HTML5, CSS, CSS3, jQuery, MySQL, Dreamweaver, Photoshop, Illustrator, InDesign">
     <meta name="theme-color" content="#1f89e4" />
 
-    <title></title>
+    <title><?php echo SITE_NAME?></title>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
     <link href="<?php echo CORE_INC_URL?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -18,3 +18,4 @@
     <script src="<?php echo CORE_INC_URL?>js/jquery.min.js"></script>
     <script src="<?php echo CORE_INC_URL?>js/bootstrap.bundle.min.js"></script>
 </head>
+<body>
