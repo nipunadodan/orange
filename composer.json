@@ -3,11 +3,12 @@
     "description": "A lightweight PHP framework",
     "require": {
         "php": "^7.2",
+        "ext-json": "*",
         "nipunadodan/orange-core": "dev-development"
     },
     "autoload": {
-        "classmap": [
-            "modules"
-        ]
+        "psr-0": {
+            "": "modules/"
+        }
     }
 }
