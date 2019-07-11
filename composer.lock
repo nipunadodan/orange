@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbd34fa96ac34876b0c01d1690bd3481",
+    "content-hash": "02601fcc881a1c4f7cd1eb325bf3cf38",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -71,12 +71,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nipunadodan/orange-core.git",
-                "reference": "f61dc34556d426ed7895942d16c7cbac3907e2ee"
+                "reference": "0925734660ac64007af728ba14ddfc224bb75702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nipunadodan/orange-core/zipball/f61dc34556d426ed7895942d16c7cbac3907e2ee",
-                "reference": "f61dc34556d426ed7895942d16c7cbac3907e2ee",
+                "url": "https://api.github.com/repos/nipunadodan/orange-core/zipball/0925734660ac64007af728ba14ddfc224bb75702",
+                "reference": "0925734660ac64007af728ba14ddfc224bb75702",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "lightweight",
                 "php"
             ],
-            "time": "2019-06-23T20:16:56+00:00"
+            "time": "2019-07-08T06:29:51+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -187,7 +187,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-json": "*"
     },
     "platform-dev": []
 }

@@ -15,6 +15,7 @@ define("INC_JS_URL", SITE_URL."includes/js/");
 define("FUNCTIONS", INC_PATH."functions.php");
 
 define("MODULE_PATH", DOC_ROOT."modules/");
+define("PROCESSES_PATH", DOC_ROOT."processes/");
 
 define("PAGE_PATH", DOC_ROOT."pages/");
 //define("PAGE_URL", SITE_URL."pages/");
