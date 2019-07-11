@@ -8,7 +8,7 @@ if($current_user->login_check()) {
             ?>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2  ml-n3 bg-dark">
+                    <div class="col-md-2  ml-n3 bg-dark min-vh-100">
                         <?php include TEMPLATE_PATH . 'menu.php'; ?>
                     </div>
                     <div class="col-md-10">
@@ -23,7 +23,7 @@ if($current_user->login_check()) {
             ?>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2 mr-n3 ml-n3 bg-dark">
+                    <div class="col-md-2 mr-n3 ml-n3 bg-dark min-vh-100">
                         <?php include TEMPLATE_PATH . 'menu.php'; ?>
                     </div>
                     <div class="col-md-10 ml-md-3">
