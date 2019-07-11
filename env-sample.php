@@ -1,4 +1,6 @@
 <?php
+define("SITE_NAME", "Orange");
+define("SITE_TAGLINE", "Lightweight PHP framework");
 define("DOMAIN", "http://localhost/");
 define("SITE_ROOT", "nipunadodan/orange/");
 
