@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //	Global settings
 
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
