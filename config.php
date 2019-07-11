@@ -1,5 +1,4 @@
 <?php
-define("SITE_NAME",'Orange V2');
 
 //	Global settings
 
