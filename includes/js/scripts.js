@@ -19,8 +19,8 @@ function ajaxDirect(func, serialized, silent='No', method='post'){
     console.log('ajax-direct~'+process);
     if(silent==='No'){
         var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
-        $('.nav-title').after(spinner);
-        $('button, input[type="submit"]').attr('disabled','true');
+        $('.loading').html(spinner);
+        $('input, select, button, input[type="submit"]').attr('disabled','true');
     }
 
     $.ajax({
@@ -34,7 +34,7 @@ function ajaxDirect(func, serialized, silent='No', method='post'){
             //console.log(json);
             after_functions[func](json);
             if(silent === 'No'){
-                $('button, input[type="submit"]').prop("disabled", false);
+                $('input, select, button, input[type="submit"]').prop("disabled", false);
                 $('#spinner').remove();
             }
         },
