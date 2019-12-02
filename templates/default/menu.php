@@ -8,17 +8,9 @@
     </button>
     <div class="d-none d-md-block min-vh-100 text-small" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <?php if($current_user->checkPerm(8)){?>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo SITE_URL.'users/'?>">Users</a>
-                </li>
-            <?php } ?>
-            <?php if($current_user->login_check()){?>
-                <li class="nav-item text-small" style="border-top: 1px solid #888888">
-
-                    <a class="nav-link" href="<?php echo SITE_URL.'logout/'?>">Logout</a>
-                </li>
-            <?php } ?>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Users</a>
+            </li>
         </ul>
         <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

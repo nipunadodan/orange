@@ -28,12 +28,3 @@ define("TEMPLATE", 'default');
 define("TEMPLATE_PATH", DOC_ROOT."templates/".TEMPLATE."/");
 define("TEMPLATE_URL", SITE_URL."templates/".TEMPLATE."/");
 
-define("SECURE", false);
-define("PRODUCTION", false);
-
-if(!PRODUCTION){
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-}
-
