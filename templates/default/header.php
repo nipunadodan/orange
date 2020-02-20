@@ -28,7 +28,7 @@
     <script src="<?php echo CORE_INC_URL?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo TEMPLATE_URL?>js/scripts.js"></script>
 
-    <script src="<?php echo CORE_INC_URL?>js/scripts.js"></script>
+    <!--<script src="<?php /*echo CORE_INC_URL*/?>js/scripts.js"></script>-->
     <script src="<?php echo CORE_INC_URL?>js/ajax.js"></script>
 </head>
 <body>
