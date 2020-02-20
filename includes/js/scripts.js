@@ -15,6 +15,44 @@ function responseModal(status, message){
         console.log(icons[status]);
 }
 
+function ajaxDirect(process, serialized, silent='No', callback=null, method='post'){
+    if(debug === true)
+        console.log('ajax-init~'+process);
+    if(silent==='No'){
+        var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
+        $('.loading').html(spinner);
+        $('input, select, button, input[type="submit').prop('disabled', true);
+    }
+
+    $.ajax({
+        data: serialized,
+        type: method,
+        url: site_url + 'ajax.php?process=' + process+'-process',
+        success: function (response) {
+            if(debug === true)
+                console.log(response);
+            var json = JSON.parse(response);
+            dyn_functions[func](json);
+            if(silent === 'No'){
+                $('input, select, button, input[type="submit"]').prop("disabled", false);
+                $('#spinner').remove();
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            if(debug === true) {
+                console.log('AJAX call failed.');
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        },
+        complete: function () {
+            if(debug === true)
+                console.log('AJAX call completed');
+        }
+    });
+
+    return false;
+}
+
 /*============================================================================*/
 
 $(document).ready(function () {
@@ -29,11 +67,11 @@ $(document).ready(function () {
 
     $('form.ajax').on('submit', function (event) {
         event.preventDefault();
-        const process = $(this).data('process');
-        const callback = $(this).data('callback');
+        const process = $(this).data('process'); //php process to run
+        const callback = $(this).data('callback'); //function to run after the process
         const serializedForm = $(this).serialize();
         const method = $(this).attr('method');
-        ajaxDirect(process, serializedForm, 'No', method, callback);
+        ajaxDirect(process, serializedForm, 'No', callback, method);
     });
 });
 
