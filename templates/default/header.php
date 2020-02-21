@@ -17,11 +17,18 @@
     <link href="<?php echo TEMPLATE_URL ?>css/styles.css" rel="stylesheet" type="text/css">
 
     <script>var site_url = '<?php echo SITE_URL ?>'</script>
+    <?php
+    if(!PRODUCTION){
+        echo '<script>const debug = true;</script>';
+    }else{
+        echo '<script>const debug = false;</script>';
+    }
+    ?>
     <script src="<?php echo CORE_INC_URL?>js/jquery.min.js"></script>
     <script src="<?php echo CORE_INC_URL?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo TEMPLATE_URL?>js/scripts.js"></script>
 
-    <script src="<?php echo CORE_INC_URL?>js/scripts.js"></script>
+    <!--<script src="<?php /*echo CORE_INC_URL*/?>js/scripts.js"></script>-->
     <script src="<?php echo CORE_INC_URL?>js/ajax.js"></script>
 </head>
 <body>

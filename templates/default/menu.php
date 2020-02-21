@@ -1,28 +1,35 @@
 <nav class="navbar-dark bg-dark p-3">
-    <a class="navbar-brand w-100 text-center" href="<?php echo SITE_URL; ?>">
-        <h1><?php echo SITE_NAME?></h1>
-    </a>
+    <h2 id="user-disp-name" class="h1 m-0 pb-0 pt-3" style="padding-left: 40px;"><span id="hello">Hello</span>, <?php echo (isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest')?></h2>
+    <!--<p class="text-muted" style="padding-left: 40px;"><span id="lang">English</span> &bull; <span id="country">UK</span></p>-->
 
-    <button class="menu-toggler d-block d-md-none bg-dark border rounded float-right">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="d-none d-md-block min-vh-100 text-small" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <?php if($current_user->checkPerm(8)){?>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo SITE_URL.'users/'?>">Users</a>
-                </li>
-            <?php } ?>
-            <?php if($current_user->login_check()){?>
-                <li class="nav-item text-small" style="border-top: 1px solid #888888">
+    <ul class="main-menu">
+        <div class="row">
+            <?php
+            $json = file_get_contents(TEMPLATE_URL.'menu_json.php');
+            $obj = json_decode($json);
+            foreach ($obj as $column) {
+                echo '<div class="col">';
+                foreach ($column as $item) {
+                    $arrow = '';
+                    if (is_object($item->sub)) {
+                        $arrow = ' <i class="la la-angle-down float-right nav-sub-icon"></i>';
+                    }
+                    echo '<li>
+                        <a href="' . $item->link . '"><i class="la la-' . $item->icon . '"></i> ' . $item->name .$arrow.'</a>';
+                    if (is_object($item->sub)) {
+                        echo '<ul class="sub-menu">';
+                        foreach ($item->sub->subs as $sub) {
+                            echo '<a href="' . $sub->link . '"><li>' . $sub->name . '</li></a>';
+                        }
+                        echo '</ul>';
+                    }
+                    echo '</li>';
+                }
+                echo '</div>';
+            }
+            ?>
+        </div>
+        <li class="text-small text-muted">v2.0.0.001 <?php if(!PRODUCTION) echo 'RC'; ?></li>
+    </ul>
 
-                    <a class="nav-link" href="<?php echo SITE_URL.'logout/'?>">Logout</a>
-                </li>
-            <?php } ?>
-        </ul>
-        <!--<form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>-->
-    </div>
 </nav>
