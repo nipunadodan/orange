@@ -12,8 +12,8 @@
     <title><?php echo SITE_NAME?></title>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="<?php echo CORE_INC_URL?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo TEMPLATE_URL?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo TEMPLATE_URL?>css/line-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo TEMPLATE_URL ?>css/styles.css" rel="stylesheet" type="text/css">
 
     <script>var site_url = '<?php echo SITE_URL ?>'</script>
@@ -24,11 +24,9 @@
         echo '<script>const debug = false;</script>';
     }
     ?>
-    <script src="<?php echo CORE_INC_URL?>js/jquery.min.js"></script>
-    <script src="<?php echo CORE_INC_URL?>js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo TEMPLATE_URL?>js/jquery.min.js"></script>
+    <script src="<?php echo TEMPLATE_URL?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo TEMPLATE_URL?>js/scripts.js"></script>
-
-    <!--<script src="<?php /*echo CORE_INC_URL*/?>js/scripts.js"></script>-->
-    <script src="<?php echo CORE_INC_URL?>js/ajax.js"></script>
+    <script src="<?php echo INC_JS_URL?>scripts.js"></script>
 </head>
 <body>

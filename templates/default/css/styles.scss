@@ -8,6 +8,17 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  background: #dfdfdf;
+  border-left: 6px solid var(--gray);
+  padding: 15px;
+}
+
 .text-thin{
   font-weight: 100;
 }
@@ -26,6 +37,15 @@ body{
 
 .text-loose{
   letter-spacing: .4em;
+}
+
+/* navigation */
+nav{
+  &.bg-dark{
+    a{
+      color: var(--white);
+    }
+  }
 }
 
 /* form */
@@ -177,4 +197,18 @@ body{
   border-radius: 0;
   border-bottom-right-radius: .25rem!important;
   border-bottom-left-radius: .25rem!important;
+}
+
+/* custom styles */
+#weather{
+  font-family: var(--font-family-monospace);
+  border-left: 6px solid var(--gray);
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+}
+.nav-title{
+  display: inline-block;
 }

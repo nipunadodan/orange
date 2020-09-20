@@ -6,8 +6,6 @@ define("DOC_ROOT", dirname(realpath(__FILE__))."/");
 include_once DOC_ROOT.'env.php';
 define("SITE_URL", DOMAIN.SITE_ROOT);
 
-define('CORE_PATH',DOC_ROOT.'vendor/nipunadodan/orange-core/');
-include_once CORE_PATH.'config.php';
 
 define("INC_PATH", DOC_ROOT."includes/");
 define("INC_URL", SITE_URL."includes/");
