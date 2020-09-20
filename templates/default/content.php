@@ -6,7 +6,7 @@ if (isset($_GET['page']) && $_GET['page']) {
         ?>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2  ml-n3 bg-dark min-vh-100">
+                <div class="col-md-2  ml-n3 bg-dark text-white min-vh-100">
                     <?php include TEMPLATE_PATH . 'menu.php'; ?>
                 </div>
                 <div class="col-md-10">

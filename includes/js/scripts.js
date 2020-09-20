@@ -96,7 +96,7 @@ before_functions['functionNameHere'] = function (){
 
 after_functions['weather'] = function (json){
     console.log(json);
-    $('pre').html(json.message);
+    $('#weather .api-response').html(json.message);
 };
 
 after_functions['login'] = function (json){
