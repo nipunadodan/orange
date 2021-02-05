@@ -12,7 +12,7 @@
             </ul>
 
             <div class="text-start my-5 bg-light p-4" id="weather">
-                <h4 class="">API Sample Response</h4>
+                <h4 class="nav-title text-start">API Sample Response</h4>
                 <div class="api-response"></div>
             </div>
         </div>

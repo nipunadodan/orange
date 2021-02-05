@@ -20,7 +20,7 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         console.log('ajax-init~'+process);
     if(silent==='No'){
         var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
-        $('.nav-title').after(spinner);
+        $('.nav-title').append(spinner);
         $('button, input[type="submit"]').attr('disabled','true');
     }
 
@@ -50,8 +50,10 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('AJAX call failed.');
-            console.log(textStatus + ': ' + errorThrown);
+            if(debug === true) {
+                console.log('AJAX call failed.');
+                console.log(textStatus + ': ' + errorThrown);
+            }
 
             let response = '';
             if(jqXHR.hasOwnProperty('responseText')) {
@@ -66,8 +68,9 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
                 var json = response;
             }
 
-            if(debug === true)
+            if(debug === true) {
                 console.log(json);
+            }
 
             after_functions[func](json);
 
