@@ -22,10 +22,18 @@ if(isset($_GET['process']) && $_GET['process'] !== ''){
         if (file_exists(PROCESSES_PATH . $_GET['process'] . '.php')) {
             include_once(PROCESSES_PATH . $_GET['process'] . '.php');
         } else {
-            echo '404: File ' . $_GET['process'] . ' not found';
+            http_response_code(404);
+            echo json_encode([
+                'code' => 404,
+                'error'=> $_GET['process'] . ' not found'
+            ]);
         }
     }
 }else{
-    echo '404: Process not Found';
+    http_response_code(400);
+    echo json_encode([
+        'code' => 400,
+        'error' => 'Bad request'
+    ]);
 }
 

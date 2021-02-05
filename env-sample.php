@@ -1,8 +1,8 @@
 <?php
 define("SITE_NAME", "Orange");
 define("SITE_TAGLINE", "Lightweight PHP framework");
-define("DOMAIN", "http://localhost/");
-define("SITE_ROOT", "nipunadodan/orange/");
+define("DOMAIN", (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/");
+define("SITE_ROOT", "nsd/orange/");
 
 define("DB_HOST", "localhost");
 define("DB", "orange");
