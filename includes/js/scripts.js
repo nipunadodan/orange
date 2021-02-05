@@ -29,13 +29,15 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         type: method,
         url: site_url + 'ajax.php?process=' + process,
         success: function (response) {
-            if(debug === true)
-                console.log(response);
             try {
                 var json = JSON.parse(response);
             } catch (e) {
                 var json = response;
             }
+
+            if(debug === true)
+                console.log(json);
+
             if(json.status === 'sessionexpired'){
                 location.reload();
                 return;
@@ -50,11 +52,25 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         error: function (jqXHR, textStatus, errorThrown) {
             console.log('AJAX call failed.');
             console.log(textStatus + ': ' + errorThrown);
+
+            let response = '';
             if(jqXHR.hasOwnProperty('responseText')) {
-                console.log(jqXHR.responseText);
+                response = jqXHR.responseText;
             }else{
-                console.log({error:'Nothing returned'});
+                response = {error:'Nothing returned'};
             }
+
+            try {
+                var json = JSON.parse(response);
+            } catch (e) {
+                var json = response;
+            }
+
+            if(debug === true)
+                console.log(json);
+
+            after_functions[func](json);
+
             if(silent === 'No'){
                 $('button, input[type="submit"]').prop("disabled", false);
                 $('#spinner').remove();
@@ -104,7 +120,7 @@ before_functions['functionNameHere'] = function (){
 };
 
 after_functions['weather'] = function (json){
-    console.log(json);
+    //console.log(json);
     $('#weather .api-response').html(json.message);
 };
 
