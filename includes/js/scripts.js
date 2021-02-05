@@ -48,8 +48,17 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            //console.log('AJAX call failed.');
-            //console.log(textStatus + ': ' + errorThrown);
+            console.log('AJAX call failed.');
+            console.log(textStatus + ': ' + errorThrown);
+            if(jqXHR.hasOwnProperty('responseText')) {
+                console.log(jqXHR.responseText);
+            }else{
+                console.log({error:'Nothing returned'});
+            }
+            if(silent === 'No'){
+                $('button, input[type="submit"]').prop("disabled", false);
+                $('#spinner').remove();
+            }
         },
         complete: function () {
             //console.log('AJAX call completed');
@@ -99,7 +108,7 @@ after_functions['weather'] = function (json){
     $('#weather .api-response').html(json.message);
 };
 
-after_functions['login'] = function (json){
-    //console.log(json);
+after_functions['test'] = function (json){
+    console.log(json);
 };
 /*=========================================================*/
