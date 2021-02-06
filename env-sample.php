@@ -25,3 +25,6 @@ if(!PRODUCTION){
 }
 
 date_default_timezone_set('Asia/Colombo'); //set your timezone here
+
+
+define('OPEN_WEATHER', 'xxxx');

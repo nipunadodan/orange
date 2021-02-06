@@ -3,8 +3,26 @@ use Orange\ApiConnect;
 
 $data = [
     'q' => 'Colombo,LK',
-    'appid' => '0fda066fba8d3db963c55e3070fec64a',
+    'appid' => OPEN_WEATHER,
 ];
-$api = ApiConnect::getJSON('https://api.openweathermap.org/data/2.5/weather',$data);
 
-print_r($api);
+$client = new GuzzleHttp\Client();
+
+$url = 'https://api.openweathermap.org/data/2.5/weather';
+
+$headers = [
+    'Accept' => 'application/json',
+];
+
+try {
+    $res = $client->get($url, [
+        'headers' => $headers,
+        'form_params' => $data,
+    ]);
+}catch (GuzzleHttp\Exception\ClientException $e) {
+    $res = $e->getResponse();
+    $responseBodyAsString = $res->getBody()->getContents();
+}
+http_response_code($res->getStatusCode());
+//echo $res->getHeader('content-type')[0];
+echo $res->getBody();

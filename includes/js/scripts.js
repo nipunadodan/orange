@@ -20,7 +20,7 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         console.log('ajax-init~'+process);
     if(silent==='No'){
         var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
-        $('.nav-title').after(spinner);
+        $('.nav-title').append(spinner);
         $('button, input[type="submit"]').attr('disabled','true');
     }
 
@@ -29,13 +29,15 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         type: method,
         url: site_url + 'ajax.php?process=' + process,
         success: function (response) {
-            if(debug === true)
-                console.log(response);
             try {
                 var json = JSON.parse(response);
             } catch (e) {
                 var json = response;
             }
+
+            if(debug === true)
+                console.log(json);
+
             if(json.status === 'sessionexpired'){
                 location.reload();
                 return;
@@ -48,13 +50,30 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('AJAX call failed.');
-            console.log(textStatus + ': ' + errorThrown);
-            if(jqXHR.hasOwnProperty('responseText')) {
-                console.log(jqXHR.responseText);
-            }else{
-                console.log({error:'Nothing returned'});
+            if(debug === true) {
+                console.log('AJAX call failed.');
+                console.log(textStatus + ': ' + errorThrown);
             }
+
+            let response = '';
+            if(jqXHR.hasOwnProperty('responseText')) {
+                response = jqXHR.responseText;
+            }else{
+                response = {error:'Nothing returned'};
+            }
+
+            try {
+                var json = JSON.parse(response);
+            } catch (e) {
+                var json = response;
+            }
+
+            if(debug === true) {
+                console.log(json);
+            }
+
+            after_functions[func](json);
+
             if(silent === 'No'){
                 $('button, input[type="submit"]').prop("disabled", false);
                 $('#spinner').remove();
@@ -104,7 +123,7 @@ before_functions['functionNameHere'] = function (){
 };
 
 after_functions['weather'] = function (json){
-    console.log(json);
+    //console.log(json);
     $('#weather .api-response').html(json.message);
 };
 
