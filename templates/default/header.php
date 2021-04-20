@@ -12,7 +12,6 @@
     <title><?php echo SITE_NAME?></title>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="<?php echo TEMPLATE_URL?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo TEMPLATE_URL?>css/line-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo TEMPLATE_URL ?>css/styles.css" rel="stylesheet" type="text/css">
 
@@ -25,7 +24,7 @@
     }
     ?>
     <script src="<?php echo TEMPLATE_URL?>js/jquery.min.js"></script>
-    <script src="<?php echo TEMPLATE_URL?>js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo SITE_URL?>vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo TEMPLATE_URL?>js/scripts.js"></script>
     <script src="<?php echo INC_JS_URL?>scripts.js"></script>
 </head>

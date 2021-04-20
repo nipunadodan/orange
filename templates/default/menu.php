@@ -29,7 +29,7 @@
             }
             ?>
         </div>
-        <li class="text-small text-muted mt-4">v2.1.0.002 <?php if(!PRODUCTION) echo 'RC'; ?></li>
+        <li class="text-small text-muted mt-4"> <?php echo VERSION; if(!PRODUCTION) echo 'RC'; ?></li>
     </ul>
 
 </nav>

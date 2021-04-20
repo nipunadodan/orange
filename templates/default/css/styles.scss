@@ -2,8 +2,81 @@ $gray: #535A6B;
 $dark_gray: #cfcfcf;
 $light_gray: #dfdfdf;
 $xlightgray : #eaeaea;
-$orange : #ff9d00;
+$primary : #ff9d00; /*modified the primary colour <- RIGHT HERE!! Yeeei
+*/
+@import "../../../vendor/twbs/bootstrap/scss/functions";
+@import "../../../vendor/twbs/bootstrap/scss/mixins";
 
+@import "../../../vendor/twbs/bootstrap/scss/variables";
+$custom-spacers: (
+        6: $spacer * 6,
+        7: $spacer * 9,
+        8: $spacer * 12,
+);
+$spacers: map-merge($spacers, $custom-spacers);
+
+@import "../../../vendor/twbs/bootstrap/scss/utilities";
+//@import "../../../vendor/twbs/bootstrap/scss/forms";
+//$utilities:() !default;
+
+
+$utilities: map-merge(
+$utilities,
+(
+"width" : map-merge(
+map-get($utilities, "width"),
+(
+  values: map-merge(
+    map-get(map-get($utilities, "width"), "values"),
+          (10:10%),
+        )
+      )
+    )
+  )
+);
+
+$utilities: map-merge(
+$utilities,
+(
+"cursor": (
+property: cursor,
+class: cursor,
+values: auto pointer grab,
+),
+"nsd-form-input": (
+property: margin,
+class: form-input,
+values: 0,
+)
+)
+);
+
+$utilities: map-merge(
+$utilities,
+(
+"bg-dark": (
+property: background,
+class: dark-mode bg,
+values: $theme-colors,
+)
+)
+);
+
+/* // Create your own map
+$custom-colors: (
+  "custom-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors); */
+
+@import "../../../vendor/twbs/bootstrap/scss/bootstrap.scss";
+
+/*!
+ * Orange v3.0.0 (https://nipunadodan.com/orange)
+ * Copyright 2011-2021 Nipuna Dodantenna
+ * Licensed under GNUv3 (https://github.com/nipunadodan/orange/blob/master/LICENSE)
+ */
 body{
   font-family: 'Roboto', sans-serif;
 }
