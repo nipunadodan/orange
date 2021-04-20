@@ -1,14 +1,11 @@
 <?php
 use Orange\ApiConnect;
 
-$data = [
-    'q' => 'Colombo,LK',
-    'appid' => OPEN_WEATHER,
-];
+$data = [];
 
 $client = new GuzzleHttp\Client();
 
-$url = 'https://api.openweathermap.org/data/2.5/weather';
+$url = 'https://api.openweathermap.org/data/2.5/weather?q=Colombo,LK&appid='.OPEN_WEATHER;
 
 $headers = [
     'Accept' => 'application/json',

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head>
+    <link rel="icon" type="image/png" href="http://nipunadodan.com/favicon.png">
+    <title>Orange | Lightweight PHP framework with auto-routing</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nipuna Dodantenna">
+    <meta name="description" content="Experienced Fullstack Web and UX developer who is also a travel buff with a high enthusiasm in travel and landscape photography">
+    <meta name="keywords" content="web, ui, ux, developer, php, HTML, HTML5, CSS, CSS3, jQuery, MySQL, Dreamweaver, Photoshop, Illustrator, InDesign">
+    <meta name="theme-color" content="#1f89e4" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="../templates/default/css/line-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../templates/default/css/styles.css" rel="stylesheet" type="text/css">
+    <script>const debug = false;</script>
+    <script>const site_url = 'https://nipunadodan.github.io/orange/';</script>
+    <script src="../templates/default/js/jquery.min.js"></script>
+    <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../templates/default/js/scripts.js"></script>
+    <script src="../includes/js/scripts.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row min-vh-100 justify-content-center align-content-center text-center py-6">
+        <div class="col-8">
+            <h1 class="display-4">Orange</h1>
+            <hr>
+            <h2 class="h6 text-muted">Lightweight PHP framework with auto-routing</h2>
+            <p class="text-small text-muted font-monospace">v2.2.0.004</p>
+
+            <ol class="text-start bg-light p-4 mt-4" style='border-left: 6px solid var(--bs-gray); font-family: var(--bs-font-monospace)'>
+                <h4 class="mb-3"><i class="la la-power-off"></i> Getting started 1-2-3</h4>
+                <li class="mb-2 ms-5"><pre>git clone https://github.com/nipunadodan/orange.git</pre></li>
+                <li class="ms-5"><pre>composer update</pre></li>
+                <li class="ms-5">Copy the env-sample.php and rename it to env.php and edit</li>
+            </ol>
+
+            <ul class="text-start bg-light p-4 mt-4 list-unstyled" style='border-left: 6px solid var(--bs-gray); font-family: var(--bs-font-monospace)'>
+                <h4 class="mb-3"><i class="la la-star-o"></i> What's New?</h4>
+                <li class="ms-5">Introduced GuzzleHTTP to handle http requests</li>
+                <li class="ms-5">Bootstrap 5 included - now you can customise Bootstrap while in the Project</li>
+            </ul>
+
+            <ul class="text-start bg-light p-4 mt-4 list-unstyled" style='border-left: 6px solid var(--bs-gray); font-family: var(--bs-font-monospace)'>
+                <h4 class="mb-3"><i class="la la-wrench"></i> Bugfixes</h4>
+                <li class="ms-5">Introduced GuzzleHTTP to handle http requests</li>
+                <li class="ms-5">Bootstrap 5 included - now you can customise Bootstrap while in the Project</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Response Modal -->
+<div class="modal fade" id="response-modal" tabindex="-1" role="dialog" aria-labelledby="responseModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered border-0" role="document">
+        <div class="modal-content border-0 ">
+            <div class="modal-header d-block border-0 pt-5">
+                <div class="text-center">
+                    <i class="" id="response-modal-icon"></i>
+                    <span class="text-bold text-capitalize" id="response-modal-title"></span>
+                </div>
+            </div>
+            <div class="modal-body text-center text-small">
+            </div>
+            <div class="modal-footer border-0 p-0 mt-3">
+                <button type="button" id="response-modal-okay" class="btn btn-light text-small text-uppercase w-100 rounded-0 rounded-bottom py-3 m-0" data-bs-dismiss="modal">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

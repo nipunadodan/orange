@@ -14,13 +14,20 @@ function responseModal(status, message){
     if(debug === true)
         console.log(icons[status]);
 }
-
-function ajaxDirect(func, serialized, silent='No', method='post', process=func+'-process'){
+/*
+    * func: The JS function to be called afterwards. If process is not provided a process with the name name a the func will be called.
+    * data: Serialised data to be sent to the ajax call.
+    * silent: Determine whether or not the ajax call to be executed silent.
+    * method: Method that the ajax call should be called.
+    * process: If you need a different JS function to be called at 'func' you can specify the common process here.
+    * async: whether or not the ajax call to be executed as async
+* */
+function ajaxDirect({callback: callback, data: serialized, silent: silent = false, method:method = 'post', process:process = callback+'-process', async:async = true} = {}){
     if(debug === true)
         console.log('ajax-init~'+process);
-    if(silent==='No'){
+    if(silent === false){
         var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
-        $('.nav-title').append(spinner);
+        $('.nav-title').after(spinner);
         $('button, input[type="submit"]').attr('disabled','true');
     }
 
@@ -28,11 +35,13 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
         data: serialized,
         type: method,
         url: site_url + 'ajax.php?process=' + process,
+        async:async,
         success: function (response) {
+            let json;
             try {
-                var json = JSON.parse(response);
+                json = JSON.parse(response);
             } catch (e) {
-                var json = response;
+                json = response;
             }
 
             if(debug === true)
@@ -43,13 +52,14 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
                 return;
             }
             //console.log(func);
-            after_functions[func](json);
-            if(silent === 'No'){
+            after_functions[callback](json);
+            if(silent === false){
                 $('button, input[type="submit"]').prop("disabled", false);
                 $('#spinner').remove();
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
+            let json;
             if(debug === true) {
                 console.log('AJAX call failed.');
                 console.log(textStatus + ': ' + errorThrown);
@@ -63,18 +73,18 @@ function ajaxDirect(func, serialized, silent='No', method='post', process=func+'
             }
 
             try {
-                var json = JSON.parse(response);
+                json = JSON.parse(response);
             } catch (e) {
-                var json = response;
+                json = response;
             }
 
             if(debug === true) {
                 console.log(json);
             }
 
-            after_functions[func](json);
+            after_functions[callback](json);
 
-            if(silent === 'No'){
+            if(silent === false){
                 $('button, input[type="submit"]').prop("disabled", false);
                 $('#spinner').remove();
             }
@@ -101,11 +111,20 @@ $(document).ready(function () {
 
     $('form.ajax').on('submit', function (event) {
         event.preventDefault();
-        const process = $(this).data('process'); //php process to run
-        const callback = $(this).data('callback'); //function to run after the process
+        const process = $(this).data('process') || $(this).attr('name'); //php process to run
+        const callback = $(this).data('callback'); //JS function to run after the process
         const serializedForm = $(this).serialize();
         const method = $(this).attr('method');
-        ajaxDirect(process, serializedForm, 'No', callback, method);
+        const silent = $(this).data('silent');
+        const async = $(this).data('async');
+        ajaxDirect({
+            callback:callback,
+            data: serializedForm,
+            process:process,
+            silent:silent,
+            method:method,
+            async:async
+        });
     });
 });
 
@@ -124,7 +143,7 @@ before_functions['functionNameHere'] = function (){
 
 after_functions['weather'] = function (json){
     //console.log(json);
-    $('#weather .api-response').html(json.message);
+    $('.api-response').html(JSON.stringify(json));
 };
 
 after_functions['test'] = function (json){
