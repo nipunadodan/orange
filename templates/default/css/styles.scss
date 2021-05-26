@@ -4,6 +4,8 @@ $light_gray: #dfdfdf;
 $xlightgray : #eaeaea;
 $primary : #ff9d00; /*modified the primary colour <- RIGHT HERE!! Yeeei
 */
+$health : #0a8006;
+
 @import "../../../vendor/twbs/bootstrap/scss/functions";
 @import "../../../vendor/twbs/bootstrap/scss/mixins";
 
@@ -15,6 +17,13 @@ $custom-spacers: (
         8: $spacer * 12,
 );
 $spacers: map-merge($spacers, $custom-spacers);
+
+$custom-colours:(
+        theme:$health,
+        light-grey:$gray-400,
+        xlight-grey:$gray-200,
+);
+$theme-colors: map-merge($theme-colors, $custom-colours);
 
 @import "../../../vendor/twbs/bootstrap/scss/utilities";
 
@@ -59,4 +68,4 @@ $theme-colors: map-merge($theme-colors, $custom-colors); */
 
 @import "../../../vendor/twbs/bootstrap/scss/bootstrap.scss";
 
-@import "custom";
+@import 'custom';

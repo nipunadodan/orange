@@ -5,7 +5,7 @@
                 <div class="col-md-12 bg-white py-5 px-3 rounded-right">
                     <h1 class="SF-thin">Login</h1>
 
-                    <form class="form ajax" name="login" method="post" data-func="o1" data-redirect="" data-popup="yes">
+                    <form class="form ajax" name="login" method="post"  data-redirect="" data-popup="yes" data-silent="no">
                         <label for="username" class="m-0">Username</label>
                         <div class="input-group mb-2">
                             <input type="text" class="form-control border-end-0" placeholder="Your username here" aria-label="Your username here" aria-describedby="basic-addon2">
