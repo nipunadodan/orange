@@ -15,12 +15,12 @@ function responseModal(status, message){
         console.log(icons[status]);
 }
 /*
-    * func: The JS function to be called afterwards. If process is not provided a process with the name name a the func will be called.
-    * data: Serialised data to be sent to the ajax call.
-    * silent: Determine whether or not the ajax call to be executed silent.
-    * method: Method that the ajax call should be called.
-    * process: If you need a different JS function to be called at 'func' you can specify the common process here.
-    * async: whether or not the ajax call to be executed as async
+    * (string) callback: The JS function to be called afterwards. If process is not provided a process with the name name a the func will be called. Previously called func.
+    * (json) data: Serialised data to be sent to the ajax call.
+    * (yes|no) silent: Determine whether or not the ajax call to be executed silent.
+    * (get|post|put|delete) method: Method that the ajax call should be called.
+    * (string) process: If you need a different JS function to be called at 'func' you can specify the common process here.
+    * (bool true|false) async: whether or not the ajax call to be executed as async
 * */
 function ajaxDirect({callback: callback, data: serialized, silent: silent = false, method:method = 'post', process:process = callback+'-process', async:async = true} = {}){
     if(debug === true)
@@ -111,8 +111,8 @@ $(document).ready(function () {
 
     $('form.ajax').on('submit', function (event) {
         event.preventDefault();
-        const process = $(this).data('process') || $(this).attr('name'); //php process to run
-        const callback = $(this).data('callback'); //JS function to run after the process
+        const callback = $(this).data('callback') || $(this).attr('name'); //JS function to run after the process
+        const process = $(this).data('process'); //php process to run
         const serializedForm = $(this).serialize();
         const method = $(this).attr('method');
         const silent = $(this).data('silent');
@@ -146,7 +146,11 @@ after_functions['weather'] = function (json){
     $('.api-response').html(JSON.stringify(json));
 };
 
-after_functions['test'] = function (json){
-    console.log(json);
+after_functions['login'] = function (json){
+    if(json.status === 'success'){
+        location.reload();
+    }else{
+        responseModal('danger', json.message);
+    }
 };
 /*=========================================================*/
