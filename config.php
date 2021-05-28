@@ -5,7 +5,7 @@ session_start();
 define("DOC_ROOT", dirname(realpath(__FILE__))."/");
 include_once DOC_ROOT.'env.php';
 define("SITE_URL", DOMAIN.SITE_ROOT);
-define('VERSION','v2.2.0.004');
+define('VERSION','v2.2.0.005');
 
 
 define("INC_PATH", DOC_ROOT."includes/");
