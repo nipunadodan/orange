@@ -1,9 +1,9 @@
 <div class="container py-8">
     <div class="row min-vh-100 justify-content-center align-content-center text-center">
         <div class="col-8">
-            <h1 class="text-thin text-loose">Orange</h1>
+            <h1 class="text-thin text-loose"><?php echo SITE_NAME?></h1>
             <hr>
-            <h2 class="h6 text-muted text-thin">Lightweight PHP framework with auto-routing</h2>
+            <h2 class="h6 text-muted text-thin"><?php echo SITE_TAGLINE?></h2>
 
             <ol class="text-start bg-light p-4 mt-4" style='border-left: 6px solid var(--bs-gray); font-family: var(--bs-font-monospace)'>
                 <h4 class="mb-3">Getting started 1-2-3</h4>
