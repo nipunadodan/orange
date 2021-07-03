@@ -1,5 +1,6 @@
 <?php
-use Orange\ApiConnect;
+
+declare(strict_types=1);
 
 $data = [];
 
@@ -16,9 +17,9 @@ try {
         'headers' => $headers,
         'form_params' => $data,
     ]);
-}catch (GuzzleHttp\Exception\ClientException $e) {
+} catch (GuzzleHttp\Exception\ClientException $e) {
     $res = $e->getResponse();
-    $responseBodyAsString = $res->getBody()->getContents();
+    //$responseBodyAsString = $res->getBody()->getContents();
 }
 http_response_code($res->getStatusCode());
 //echo $res->getHeader('content-type')[0];

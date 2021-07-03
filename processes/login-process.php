@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -14,23 +17,22 @@ if (isset($_POST['username'], $_POST['password'])) {
 
     $verify = $current_user->login($username, $nothashpw);
     //print_r($verify);
-    if ($verify == true) {
-        $return = array(
+    if ($verify === true) {
+        $return = [
             'message' => 'Login Success.',
-            'status' => 'success'
-        );
+            'status' => 'success',
+        ];
     } else {
-        $return = array(
+        $return = [
             'message' => 'You\'ve entered invalid credentials.',
-            'status' => 'danger'
-        );
+            'status' => 'danger',
+        ];
     }
-
 } else {
-    $return = array(
+    $return = [
         'message' => 'Invalid Request.',
-        'status' => 'danger'
-    );
+        'status' => 'danger',
+    ];
 }
 
 echo json_encode($return);

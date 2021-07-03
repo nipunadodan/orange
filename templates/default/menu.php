@@ -1,5 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+?>
 <nav class="navbar-dark bg-dark text-white p-3">
-    <h2 id="user-disp-name" class="h4 m-0 py-3"><span id="hello">Hello</span>, <?php echo (isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest')?></h2>
+    <h2 id="user-disp-name" class="h4 m-0 py-3"><span id="hello">Hello</span>, <?php echo $_SESSION['user_name'] ?? 'Guest'?></h2>
     <!--<p class="text-muted" style="padding-left: 40px;"><span id="lang">English</span> &bull; <span id="country">UK</span></p>-->
 
     <ul class="main-menu text-small list-unstyled">
@@ -29,7 +34,10 @@
             }
             ?>
         </div>
-        <li class="text-small text-muted mt-4"> <?php echo VERSION; if(!PRODUCTION) echo 'RC'; ?></li>
+        <li class="text-small text-muted mt-4"> <?php echo VERSION;
+if (! PRODUCTION) {
+    echo 'RC';
+} ?></li>
     </ul>
 
 </nav>

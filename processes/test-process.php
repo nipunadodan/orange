@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 $client = new GuzzleHttp\Client();
 
 $url = 'http://localhost/nsd/orange/processes/404.php';
@@ -21,6 +24,6 @@ $res = $client->post($url, [
     'headers' => $headers,
     'json' => $GetOrder,
 ]);
-http_response_code ($res->getStatusCode());
+http_response_code($res->getStatusCode());
 //echo $res->getHeader('content-type')[0];
 echo $res->getBody();

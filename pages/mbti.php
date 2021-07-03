@@ -1,6 +1,9 @@
 <?php
-$mbti1 = isset($_GET['mbti1']) && $_GET['mbti1'] !== '' ? $_GET['mbti1'] :'';
-$mbti2 = isset($_GET['mbti2']) && $_GET['mbti2'] !== '' ? $_GET['mbti2'] :'';
+
+declare(strict_types=1);
+
+$mbti1 = isset($_GET['mbti1']) && $_GET['mbti1'] !== '' ? $_GET['mbti1'] : '';
+$mbti2 = isset($_GET['mbti2']) && $_GET['mbti2'] !== '' ? $_GET['mbti2'] : '';
 ?>
 <div class="container my-5">
     <h1>Cognitive Functions Comparison Tool</h1>
@@ -148,7 +151,7 @@ $mbti2 = isset($_GET['mbti2']) && $_GET['mbti2'] !== '' ? $_GET['mbti2'] :'';
  });
 
  <?php
-     if(!empty($mbti1) || !empty($mbti2)){
+     if ($mbti1 !== '' || $mbti2 !== '') {
          ?>
          $('form').submit(function(e){
              e.preventDefault();

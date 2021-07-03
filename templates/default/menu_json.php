@@ -1,29 +1,32 @@
 <?php
+
+declare(strict_types=1);
+
 $menu = [
     [
         [
             'name' => 'Link',
             'link' => 'link',
             'icon' => 'home',
-            'sub' => ''
+            'sub' => '',
         ],
         [
             'name' => 'Sub Links',
             'link' => '#',
             'icon' => 'wallet',
             'sub' => [ 'subs' => [
-                    [
-                        'name' => 'Link 1',
-                        'link' => 'link1',
-                        'icon' => 'home',
-                    ],
-                    [
-                        'name' => 'Link 2',
-                        'link' => 'link2',
-                        'icon' => 'home',
-                    ]
-                ]
-            ]
+                [
+                    'name' => 'Link 1',
+                    'link' => 'link1',
+                    'icon' => 'home',
+                ],
+                [
+                    'name' => 'Link 2',
+                    'link' => 'link2',
+                    'icon' => 'home',
+                ],
+            ],
+            ],
         ],
     ],
     //[]

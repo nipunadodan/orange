@@ -1,6 +1,7 @@
 {
     "name": "nipunadodan/orange",
     "description": "A lightweight PHP framework",
+    "license": "MIT",
     "require": {
         "php": "^7.2",
         "ext-json": "*",
@@ -12,12 +13,15 @@
     },
     "autoload": {
         "psr-0": {
-            "": "modules/"
+            "Orange": "modules/"
         }
     },
     "suggest": {
         "phpmailer/phpmailer": "Allows sending mails through it",
         "guzzlehttp/guzzle": "Allows communicating to APIs via http requests",
         "catfan/medoo": "Allows to do database queries more easily"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.0"
     }
 }

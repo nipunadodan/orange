@@ -1,4 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
+namespace Orange;
+
 /**
  * Created by PhpStorm.
  * User: kweb
@@ -6,7 +11,6 @@
  * Time: 17:03
  */
 
-class Test
+abstract class Test
 {
-
 }

@@ -1,3 +1,8 @@
+<?php
+
+declare(strict_types=1);
+
+?>
 <div class="container py-8">
     <div class="row min-vh-100 justify-content-center align-content-center text-center">
         <div class="col-8">

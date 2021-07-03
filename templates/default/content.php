@@ -1,19 +1,22 @@
 <?php
+
+declare(strict_types=1);
+
 if (isset($_GET['page']) && $_GET['page']) {
     $page_path = DOC_ROOT.'controllers/'. $_GET['page'] . 'Controller.php';
-    if (file_exists($page_path)) include_once($page_path);
+    if (file_exists($page_path)) {
+        include_once $page_path;
+    }
     //else echo 'file not exist';
 }
 
 if (isset($_GET['page']) && $_GET['page']) {
     $page_path = PAGE_PATH . $_GET['page'] . '.php';
     if (file_exists($page_path)) {
-        include_once(PAGE_PATH . $_GET['page'] . '.php');
+        include_once PAGE_PATH . $_GET['page'] . '.php';
     } else {
-        include_once(PAGE_PATH . '404.php');
+        include_once PAGE_PATH . '404.php';
     }
 } else {
-    include_once(PAGE_PATH . 'home.php');
+    include_once PAGE_PATH . 'home.php';
 }
-
-

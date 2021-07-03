@@ -1,3 +1,8 @@
+<?php
+
+declare(strict_types=1);
+
+?>
 <!doctype html>
 <html><head>
     <link rel="icon" type="image/png" href="http://nipunadodan.com/favicon.png">
@@ -17,9 +22,9 @@
 
     <script>var site_url = '<?php echo SITE_URL ?>'</script>
     <?php
-    if(!PRODUCTION){
+    if (! PRODUCTION) {
         echo '<script>const debug = true;</script>';
-    }else{
+    } else {
         echo '<script>const debug = false;</script>';
     }
     ?>

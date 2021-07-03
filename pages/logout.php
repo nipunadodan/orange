@@ -1,7 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 session_destroy();
-if(isset($_SESSION))
+if (isset($_SESSION)) {
     unset($_SESSION);
+}
 ?>
 
 <script>
